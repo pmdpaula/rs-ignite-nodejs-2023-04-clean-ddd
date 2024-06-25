@@ -3,9 +3,9 @@ import { AnswerAttachmentList } from "../../enterprise/entities/answer-attachmen
 import { AnswersRepository } from "../repositories/answers-repository";
 import { Either, left, right } from "@/core/either";
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
+import { NotAllowedError } from "@/core/errors/errors/not-allowed-error";
+import { ResourceNotFoundError } from "@/core/errors/errors/resource-not-found-error";
 import { AnswerAttachmentsRepository } from "@/domain/forum/application/repositories/answer-attachments-repository";
-import { NotAllowedError } from "@/domain/forum/application/use-cases/errors/not-allowed-error";
-import { ResourceNotFoundError } from "@/domain/forum/application/use-cases/errors/resource-not-found-error";
 import { Answer } from "@/domain/forum/enterprise/entities/answer";
 
 interface EditAnswerUseCaseRequest {

@@ -1,7 +1,7 @@
 import { QuestionsRepository } from "../repositories/questions-repository";
 import { Either, left, right } from "@/core/either";
-import { NotAllowedError } from "@/domain/forum/application/use-cases/errors/not-allowed-error";
-import { ResourceNotFoundError } from "@/domain/forum/application/use-cases/errors/resource-not-found-error";
+import { NotAllowedError } from "@/core/errors/errors/not-allowed-error";
+import { ResourceNotFoundError } from "@/core/errors/errors/resource-not-found-error";
 
 interface DeleteQuestionUseCaseRequest {
   authorId: string;
@@ -10,6 +10,7 @@ interface DeleteQuestionUseCaseRequest {
 
 type DeleteQuestionUseCaseResponse = Either<
   ResourceNotFoundError | NotAllowedError,
+  // eslint-disable-next-line @typescript-eslint/ban-types
   {}
 >;
 export class DeleteQuestionUseCase {
